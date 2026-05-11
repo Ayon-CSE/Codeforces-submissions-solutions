@@ -8,69 +8,82 @@
 
 [![Codeforces](https://badges.joonhyung.xyz/codeforces/Ayon.svg)](https://codeforces.com/profile/Ayon)
 [![AtCoder](https://badges.joonhyung.xyz/atcoder/AyonCoder.svg)](https://atcoder.jp/users/AyonCoder)
-[![GitHub Actions](https://img.shields.io/badge/automation-GitHub%20Actions-2088FF?logo=github-actions)](../../actions/workflows/harwest.yml)
+[![GitHub Actions](https://img.shields.io/badge/automation-GitHub%20Actions-2088FF?logo=github-actions)](../../actions/workflows/fetch_accepted.yml)
 
-**Automatically archive your competitive programming submissions from Codeforces & AtCoder**
+**Automatically archive your competitive programming accepted solutions from Codeforces & AtCoder**
 
-> **NEW!** For all your harvesting needs, use the magical `harwest_control_panel.bat` (the one batch to rule them all)! It's so powerful, even your submissions are afraid to be left behind. Run it, and let the automation wizardry begin!
+> **Featuring full problem ratings and contest names!**
 >
-> **v2.0** System upgraded with enhanced automation and improved user experience!
+> Your accepted solutions are automatically fetched daily with complete details including problem difficulty and full contest information.
 
 </div>
 
 ---
 
-## 🚀 Quick Start
+## 📊 Statistics
 
-> **Want this for your own profile?**  
-> **📖 [Complete User Guide](USER_GUIDE.md)** - Setup in 5 minutes!
+| Platform | Total Submissions | **Accepted (AC)** |
+|----------|------------------|------------------|
+| **Codeforces** | 4851 | **2177** |
+| **AtCoder** | - | - |
 
-**Fork this repository**, then run:
-```bash
-python fresh_start.py
+---
+
+## 🎯 View Accepted Solutions
+
+### Codeforces - 2177 Accepted Solutions
+
+Each solution includes:
+- ✅ Problem name and difficulty rating
+- ✅ Full contest name with division
+- ✅ Submission date
+- ✅ Direct link to solution on Codeforces
+
+**[👉 View All Codeforces Solutions →](submissions/codeforces_accepted.md)**
+
+### AtCoder
+
+AtCoder submissions coming soon (username verification in progress)
+
+**[View AtCoder Solutions →](submissions/atcoder_accepted.md)**
+
+---
+
+## 🚀 How It Works
+
+This repository automatically fetches your **accepted solutions only** from Codeforces and AtCoder every day using GitHub Actions and the official APIs.
+
+### Features
+
+- **Automatic Daily Updates**: Runs at 11:00 PM BDT (5:00 PM UTC)
+- **Complete Details**: Problem ratings and full contest names
+- **Direct Links**: Click to view any solution on the platform
+- **JSON Backup**: All submission data stored for analysis
+- **Zero Maintenance**: Fully automated via GitHub Actions
+
+### Workflow
+
+```
+fetch_submissions.py → Fetch API Data → Filter AC Solutions → 
+Generate Markdown with Ratings → Auto-commit → Push to GitHub
 ```
 
-That's it! Your submissions will be automatically harvested daily via GitHub Actions.
-
 ---
 
-<div align="center">
-
-## 📊 My Submissions
-
-</div>
-
-<div align="center">
-
-### 🎯 Platforms
-
-| Platform | Profile | Solutions | Submissions |
-|----------|---------|-----------|-------------|
-| **Codeforces** | [Ayon](https://codeforces.com/profile/Ayon) | [![Codeforces](https://badges.joonhyung.xyz/codeforces/Ayon.svg)](https://codeforces.com/profile/Ayon) | [📝 View All (2177 AC)](submissions/codeforces_accepted.md) |
-| **AtCoder** | [AyonCoder](https://atcoder.jp/users/AyonCoder) | [![AtCoder](https://badges.joonhyung.xyz/atcoder/AyonCoder.svg)](https://atcoder.jp/users/AyonCoder) | [📝 View All](submissions/atcoder_accepted.md) |
-
-</div>
-
----
-
-### 📁 Repository Structure
-
-<details>
-<summary>Click to expand repository structure</summary>
+## 📁 Repository Structure
 
 ```
 📦 Codeforces_Atcoder-submissions/
-├── 📄 README.md                  # This file
-├── 📄 fetch_submissions.py       # Fetch script
-├── 📂 .github/
-│   └── 📂 workflows/
-│       └── 📄 harwest.yml        # GitHub Actions automation
+├── 📄 README.md                        # This file
+├── 📄 fetch_submissions.py             # Main fetch script
+├── 📂 .github/workflows/
+│   └── 📄 fetch_accepted.yml           # GitHub Actions automation
 ├── 📂 config/
-│   ├── 📄 users.json            # Username configuration
-│   └── 📄 README.md             # Config documentation
+│   ├── 📄 users.json                   # Username configuration
+│   └── 📄 README.md                    # Configuration guide
 └── 📂 submissions/
-    ├── 📄 codeforces_accepted.md # All accepted Codeforces solutions
-    ├── 📄 atcoder_accepted.md    # All accepted AtCoder solutions
+    ├── 📄 codeforces_accepted.md       # All AC solutions with ratings
+    ├── 📄 atcoder_accepted.md          # All AC solutions
     ├── 📂 codeforces/
     │   ├── 📄 codeforces_submissions.json
     │   └── 📄 codeforces_accepted_submissions.json
@@ -79,86 +92,75 @@ That's it! Your submissions will be automatically harvested daily via GitHub Act
         └── 📄 atcoder_accepted_submissions.json
 ```
 
-</details>
-
 ---
 
-## ⚙️ How It Works
+## ⚙️ Configuration
 
-<details>
-<summary>Click to expand how it works</summary>
+Edit `config/users.json` to change usernames:
 
-### 🤖 Automated Daily Harvesting
+```json
+{
+  "codeforces": ["Ayon"],
+  "atcoder": ["AyonCoder"]
+}
+```
 
-GitHub Actions runs **every day at 11:00 PM BDT (5:00 PM UTC)**:
-- ✅ **Smart Scanning**: Checks last 30 days for new submissions (fast & efficient)
-- ✅ **Full History**: First run fetches all submissions with `--full-scan`
-- ✅ **Auto Updates**: Tags and ratings update automatically when changed
-- ✅ **Fallback Links**: Creates platform links when code fetch fails
-- ✅ **Smart Scheduling**: Monthly check if repository inactive >30 days
-
-### 🔧 Features
-
-- **Zero Maintenance**: Fully automated via GitHub Actions
-- **Multi-Platform**: Supports Codeforces and AtCoder
-- **Multi-Account**: Track multiple usernames per platform
-- **Smart Updates**: Only checks recent submissions (configurable)
-- **Metadata Updates**: Auto-detects rating/tag changes
-- **Profile Contributions**: Shows as GitHub activity (with proper git config)
-- **Private Support**: Works with private repositories
-
-</details>
-
----
-
-## 📖 Documentation
-
-- **[📖 User Guide](USER_GUIDE.md)** - Complete setup & usage documentation
-- **[⚙️ Configuration](config/README.md)** - Username configuration details
-- **[🔄 Workflow](.github/workflows/harwest.yml)** - GitHub Actions automation
+For more details: [config/README.md](config/README.md)
 
 ---
 
 ## 🔥 Manual Trigger
 
-Want to run immediately or do a full scan?
+Want to fetch accepted solutions immediately?
 
-1. Go to [**Actions**](../../actions/workflows/harwest.yml) tab
-2. Click **"Harwest Submissions"** → **"Run workflow"**
-3. Select options:
-   - ✅ **Full scan** - Fetch complete history
-   - ⚡ **Check recent** - Last 30 days only (default)
-4. Click **"Run workflow"**
+1. Go to [Actions](../../actions) tab
+2. Select **"Fetch Accepted Solutions"**
+3. Click **"Run workflow"**
 
 ---
 
-## 💡 About This Repository
+## 📈 What's Included
 
-This repository uses [**Harwest**](https://github.com/nileshsah/harwest-tool) to automatically fetch and archive competitive programming submissions. All submissions are stored with proper timestamps, organized by contest, and presented in clean markdown tables.
+### Codeforces Solutions
 
-**Benefits:**
-- 📈 Track your competitive programming journey
-- 🌐 Showcase your solutions publicly
-- 📊 Build a comprehensive coding portfolio
-- 🎯 Never lose your solutions
-- 🔍 Easy search and navigation
+| Column | Details |
+|--------|---------|
+| Problem | Problem name |
+| Rating | Problem difficulty (800-3500+) |
+| Contest | Full contest name with division |
+| Date | Submission date |
+| Solution | Direct link to Codeforces submission |
 
 ---
 
-## 🆘 Need Help?
+## 💡 About
 
-- 📖 Read the [User Guide](USER_GUIDE.md)
-- 🐛 Check [Issues](../../issues)
-- 💬 See [Actions logs](../../actions) for workflow details
-- ⭐ Star the [original project](https://github.com/nileshsah/harwest-tool)
+This repository automatically displays all your **accepted solutions** with:
+
+- Problem difficulty ratings
+- Full contest names and divisions
+- Direct links to each solution
+- Complete submission metadata
+
+Perfect for:
+- Building a competitive programming portfolio
+- Tracking your problem-solving progress
+- Easy reference to past solutions
+- Showcase your skills
 
 ---
 
 <div align="center">
 
-**Last automated harvest:** _Check [Actions](../../actions) for latest run_
+**Last updated:** Check [Actions](../../actions) for latest run
 
-Built with ❤️ by [Ayon Das Gupta](https://github.com/Ayon-CSE) using [Harwest](https://github.com/nileshsah/harwest-tool)
+Built with ❤️ by [Ayon Das Gupta](https://github.com/Ayon-CSE)
+
+</div>
+
+<br>
+<p align="center"><sub>V1.0 - Automated Accepted Solutions Archive</sub></p>
+
 
 </div>
 
