@@ -22,10 +22,10 @@
 
 ## 📊 Statistics
 
-| Platform | Total Submissions | **Accepted (AC)** |
-|----------|------------------|------------------|
-| **Codeforces** | 4851 | **2177** |
-| **AtCoder** | - | - |
+| Platform       | Total Submissions | **Accepted (AC)** |
+| -------------- | ----------------- | ------------------- |
+| **Codeforces** | 4851              | **[2177](submissions/codeforces_accepted.md)** |
+| **AtCoder**    | -                 | -                 |
 
 ---
 
@@ -34,6 +34,7 @@
 ### Codeforces - 2177 Accepted Solutions
 
 Each solution includes:
+
 - ✅ Problem name and difficulty rating
 - ✅ Full contest name with division
 - ✅ Submission date
@@ -64,7 +65,7 @@ This repository automatically fetches your **accepted solutions only** from Code
 ### Workflow
 
 ```
-fetch_submissions.py → Fetch API Data → Filter AC Solutions → 
+fetch_submissions.py → Fetch API Data → Filter AC Solutions →
 Generate Markdown with Ratings → Auto-commit → Push to GitHub
 ```
 
@@ -123,12 +124,12 @@ Want to fetch accepted solutions immediately?
 
 ### Codeforces Solutions
 
-| Column | Details |
-|--------|---------|
-| Problem | Problem name |
-| Rating | Problem difficulty (800-3500+) |
-| Contest | Full contest name with division |
-| Date | Submission date |
+| Column   | Details                              |
+| -------- | ------------------------------------ |
+| Problem  | Problem name                         |
+| Rating   | Problem difficulty (800-3500+)       |
+| Contest  | Full contest name with division      |
+| Date     | Submission date                      |
 | Solution | Direct link to Codeforces submission |
 
 ---
@@ -143,6 +144,7 @@ This repository automatically displays all your **accepted solutions** with:
 - Complete submission metadata
 
 Perfect for:
+
 - Building a competitive programming portfolio
 - Tracking your problem-solving progress
 - Easy reference to past solutions
@@ -160,7 +162,6 @@ Built with ❤️ by [Ayon Das Gupta](https://github.com/Ayon-CSE)
 
 <br>
 <p align="center"><sub>V1.0 - Automated Accepted Solutions Archive</sub></p>
-
 
 </div>
 
