@@ -1,6 +1,9 @@
 name: Harwest Submissions
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     # Runs at 11:00 PM BDT (5:00 PM UTC) every day
     - cron: '0 17 * * *'
@@ -35,11 +38,26 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
     
-    - name: Run Harwest - Full Scan
-      if: github.event.inputs.full_scan == 'true' || github.event_name == 'schedule'
+    - name: Check if First Run
+      id: first_run
       run: |
-        harwest cf --username Ayon --out-dir submissions/codeforces
-        harwest at --username AyonCoder --out-dir submissions/atcoder
+        if [ ! -f "submissions/codeforces/codeforces.json" ] && [ ! -f "submissions/atcoder/atcoder.json" ]; then
+          echo "first_run=true" >> $GITHUB_OUTPUT
+        else
+          echo "first_run=false" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Run Harwest - Full Scan (First Run)
+      if: steps.first_run.outputs.first_run == 'true' || github.event.inputs.full_scan == 'true'
+      run: |
+        harwest cf --username Ayon --out-dir submissions/codeforces --fetch-source
+        harwest at --username AyonCoder --out-dir submissions/atcoder --fetch-source
+    
+    - name: Run Harwest - Incremental Scan
+      if: steps.first_run.outputs.first_run == 'false' && github.event.inputs.full_scan != 'true'
+      run: |
+        harwest cf --username Ayon --out-dir submissions/codeforces --fetch-source
+        harwest at --username AyonCoder --out-dir submissions/atcoder --fetch-source
     
     - name: Commit and Push
       run: |
@@ -48,5 +66,7 @@ jobs:
           git commit -m "Harwest: Update submissions on $(date +'%Y-%m-%d %H:%M:%S')"
           git push
         else
+          echo "No changes to commit"
+        fi
           echo "No new submissions found"
         fi
