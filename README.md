@@ -1,20 +1,19 @@
 <div align="center">
 
-# Competitive Programming Archive
+# Codeforces Submissions Archive
 
 </div>
 
 <div align="center">
 
 [![Codeforces](https://badges.joonhyung.xyz/codeforces/Ayon.svg)](https://codeforces.com/profile/Ayon)
-[![AtCoder](https://badges.joonhyung.xyz/atcoder/AyonCoder.svg)](https://atcoder.jp/users/AyonCoder)
-[![GitHub Actions](https://img.shields.io/badge/automation-GitHub%20Actions-2088FF?logo=github-actions)](../../actions/workflows/fetch_accepted.yml)
+[![GitHub Actions](https://img.shields.io/badge/automation-GitHub%20Actions-2088FF?logo=github-actions)](../../actions/workflows/harwest.yml)
 
-**Automatically archive your competitive programming accepted solutions from Codeforces & AtCoder**
+**Automatically archive your Codeforces accepted solutions**
 
 > **Featuring full problem ratings and contest names!**
 >
-> Your accepted solutions are automatically fetched daily with complete details including problem difficulty and full contest information.
+> Your accepted solutions are automatically fetched every 6 hours with complete details including problem difficulty and full contest information.
 
 </div>
 
@@ -22,16 +21,15 @@
 
 ## 📊 Statistics
 
-| Platform       | Total Submissions                 | **Accepted (AC)**                              |
-| -------------- | --------------------------------- | ---------------------------------------------- |
-| **Codeforces** | [4851](submissions/codeforces.md) | **[2177](submissions/codeforces_accepted.md)** |
-| **AtCoder**    | -                                 | -                                              |
+| Platform       | Total Submissions | **Accepted (AC)**                          |
+| -------------- | ----------------- | ------------------------------------------ |
+| **Codeforces** | 4857              | **[2181](submissions/codeforces_accepted.md)** |
 
 ---
 
 ## 🎯 View Accepted Solutions
 
-### Codeforces - 2177 Accepted Solutions
+### Codeforces - 2181 Accepted Solutions
 
 Each solution includes:
 
@@ -42,11 +40,23 @@ Each solution includes:
 
 **[👉 View All Codeforces Solutions →](submissions/codeforces_accepted.md)**
 
-### AtCoder
+---
 
-AtCoder submissions coming soon (username verification in progress)
+## 🚀 How It Works
 
-**[View AtCoder Solutions →](submissions/atcoder_accepted.md)**
+- GitHub Actions automatically fetches submissions **every 6 hours**
+- New submissions are automatically merged with existing data
+- Changes are automatically committed and pushed to GitHub
+- Markdown tables are regenerated with the latest data
+
+---
+
+## 📝 Configuration
+
+The script is configured in `fetch_submissions.py`:
+- Username: `Ayon`
+- API: Codeforces API v2
+- Fetch frequency: Every 6 hours via GitHub Actions
 
 ---
 

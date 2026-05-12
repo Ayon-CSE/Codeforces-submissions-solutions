@@ -1,4 +1,4 @@
-name: Fetch Accepted Solutions
+name: Fetch Codeforces Submissions
 
 on:
   push:
@@ -31,14 +31,14 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
-      - name: Fetch Accepted Solutions
+      - name: Fetch Codeforces Submissions
         run: python fetch_submissions.py
 
       - name: Commit and Push
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git add -A
-            git commit -m "Update accepted solutions on $(date +'%Y-%m-%d %H:%M:%S')"
+            git commit -m "Update Codeforces submissions on $(date +'%Y-%m-%d %H:%M:%S')"
             git push
           else
             echo "No new submissions found"
