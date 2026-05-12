@@ -116,7 +116,15 @@ def save_submissions(submissions, platform, output_dir):
 
 def generate_accepted_markdown(submissions, platform, output_dir, username, contests=None):
     """Generate markdown table with only accepted solutions"""
+    output_path = Path(output_dir) / f"{platform}_accepted.md"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    
     if not submissions:
+        # Create empty file with placeholder message
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write(f"# {platform.capitalize()} - Accepted Solutions ({username})\n\n")
+            f.write(f"No accepted solutions found yet.\n")
+        print(f"✓ Generated empty markdown: {output_path}")
         return
     
     output_path = Path(output_dir) / f"{platform}_accepted.md"
@@ -186,26 +194,37 @@ def main():
             at_existing = json.load(f)
     
     # Fetch Codeforces
-    print(f"Fetching Codeforces ({codeforces_username})...")
-    cf_subs = fetch_codeforces_submissions(codeforces_username)
+    try:
+        print(f"Fetching Codeforces ({codeforces_username})...")
+        cf_subs = fetch_codeforces_submissions(codeforces_username)
+        
+        # Merge with existing
+        cf_all = merge_submissions(cf_subs, cf_existing, 'codeforces')
+        
+        print(f"Fetching Codeforces contest details...")
+        contests = fetch_codeforces_contests()
+        
+        cf_accepted = filter_accepted(cf_all, 'codeforces')
+        print(f"  → Total: {len(cf_all)}, Accepted: {len(cf_accepted)}\n")
+    except Exception as e:
+        print(f"✗ Codeforces fetch failed: {e}\n")
+        cf_all = cf_existing
+        cf_accepted = filter_accepted(cf_existing, 'codeforces')
+        contests = {}
     
-    # Merge with existing
-    cf_all = merge_submissions(cf_subs, cf_existing, 'codeforces')
-    
-    print(f"Fetching Codeforces contest details...")
-    contests = fetch_codeforces_contests()
-    
-    cf_accepted = filter_accepted(cf_all, 'codeforces')
-    print(f"  → Total: {len(cf_all)}, Accepted: {len(cf_accepted)}\n")
-    
-    # Fetch AtCoder
-    print(f"Fetching AtCoder ({atcoder_username})...")
-    at_subs = fetch_atcoder_submissions(atcoder_username)
-    
-    # Merge with existing
-    at_all = merge_submissions(at_subs, at_existing, 'atcoder')
-    at_accepted = filter_accepted(at_all, 'atcoder')
-    print(f"  → Total: {len(at_all)}, Accepted: {len(at_accepted)}\n")
+    # Fetch AtCoder (non-critical)
+    try:
+        print(f"Fetching AtCoder ({atcoder_username})...")
+        at_subs = fetch_atcoder_submissions(atcoder_username)
+        
+        # Merge with existing
+        at_all = merge_submissions(at_subs, at_existing, 'atcoder')
+        at_accepted = filter_accepted(at_all, 'atcoder')
+        print(f"  → Total: {len(at_all)}, Accepted: {len(at_accepted)}\n")
+    except Exception as e:
+        print(f"⚠ AtCoder fetch failed (non-critical): {e}\n")
+        at_all = at_existing
+        at_accepted = filter_accepted(at_existing, 'atcoder')
     
     # Update state
     if cf_all:
