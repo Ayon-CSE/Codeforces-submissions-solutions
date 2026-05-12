@@ -5,42 +5,41 @@ on:
     branches:
       - main
   schedule:
-    # Runs at 11:00 PM BDT (5:00 PM UTC) every day
-    - cron: '0 17 * * *'
-  
+    # Runs every 6 hours to catch new submissions
+    - cron: "0 */6 * * *"
+    # Also run daily at a specific time for thoroughness
+    - cron: "0 0 * * *"
+
   workflow_dispatch:
 
 jobs:
   fetch_solutions:
     runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-    
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
-    
-    - name: Configure Git
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-    
-    - name: Fetch Accepted Solutions
-      run: python fetch_submissions.py
-    
-    - name: Commit and Push
-      run: |
-        if [ -n "$(git status --porcelain)" ]; then
-          git add -A
-          git commit -m "Update accepted solutions on $(date +'%Y-%m-%d %H:%M:%S')"
-          git push
-        else
-          echo "No new accepted solutions"
-        fi
 
-          echo "No new submissions found"
-        fi
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Fetch Accepted Solutions
+        run: python fetch_submissions.py
+
+      - name: Commit and Push
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "Update accepted solutions on $(date +'%Y-%m-%d %H:%M:%S')"
+            git push
+          else
+            echo "No new submissions found"
+          fi

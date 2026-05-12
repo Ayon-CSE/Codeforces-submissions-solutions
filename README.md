@@ -22,10 +22,10 @@
 
 ## 📊 Statistics
 
-| Platform       | Total Submissions | **Accepted (AC)** |
-| -------------- | ------------------- | ------------------- |
+| Platform       | Total Submissions                 | **Accepted (AC)**                              |
+| -------------- | --------------------------------- | ---------------------------------------------- |
 | **Codeforces** | [4851](submissions/codeforces.md) | **[2177](submissions/codeforces_accepted.md)** |
-| **AtCoder**    | -                 | -                 |
+| **AtCoder**    | -                                 | -                                              |
 
 ---
 
