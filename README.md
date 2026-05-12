@@ -9,11 +9,11 @@
 [![Codeforces](https://badges.joonhyung.xyz/codeforces/Ayon.svg)](https://codeforces.com/profile/Ayon)
 [![GitHub Actions](https://img.shields.io/badge/automation-GitHub%20Actions-2088FF?logo=github-actions)](../../actions/workflows/harwest.yml)
 
-**Automatically archive your Codeforces accepted solutions**
+**Automatically archive your Codeforces submissions**
 
-> **Featuring full problem ratings and contest names!**
+> **Featuring full problem ratings, contest names, and all submission verdicts!**
 >
-> Your accepted solutions are automatically fetched every 6 hours with complete details including problem difficulty and full contest information.
+> All your Codeforces submissions are automatically fetched daily with complete details including problem difficulty, full contest information, and submission verdicts (AC, WA, TLE, CE, etc.).
 
 </div>
 
@@ -31,16 +31,17 @@
 
 ### Codeforces
 
-- **[📋 View All Submissions (4857) →](submissions/codeforces.md)** - Complete list of all submissions
-- **[✅ View Accepted Solutions (2181) →](submissions/codeforces_accepted.md)** - Only accepted solutions with ratings and contest names
+- **[📋 View All Submissions (4857) →](submissions/codeforces.md)** - **Complete list of ALL submissions** including accepted, wrong answer, TLE, CE, and more
+- **[✅ View Accepted Solutions (2181) →](submissions/codeforces_accepted.md)** - **Only accepted solutions** (OK verdict) with ratings and contest names
 - **[👤 View Codeforces Profile →](https://codeforces.com/profile/Ayon)** - Check profile on Codeforces
 
-Each solution includes:
+Each submission includes:
 
 - ✅ Problem name and difficulty rating
 - ✅ Full contest name with division
 - ✅ Submission date
-- ✅ Direct link to solution on Codeforces
+- ✅ Verdict status (✅ OK, ❌ WA, ⏱️ TLE, 🔴 CE, etc.)
+- ✅ Direct link to submission on Codeforces
 
 ---
 
@@ -131,7 +132,18 @@ Want to fetch accepted solutions immediately?
 
 ## 📈 What's Included
 
-### Codeforces Solutions
+### Codeforces - All Submissions
+
+| Column     | Details                                |
+| ---------- | -------------------------------------- |
+| Problem    | Problem name                           |
+| Rating     | Problem difficulty (800-3500+)         |
+| Contest    | Full contest name with division         |
+| Verdict    | Submission result (OK, WA, TLE, CE...) |
+| Date       | Submission date                        |
+| Submission | Direct link to Codeforces submission    |
+
+### Codeforces - Accepted Solutions Only
 
 | Column   | Details                              |
 | -------- | ------------------------------------ |
@@ -145,19 +157,22 @@ Want to fetch accepted solutions immediately?
 
 ## 💡 About
 
-This repository automatically displays all your **accepted solutions** with:
+This repository automatically displays all your **Codeforces submissions** with:
 
+- **All Submissions (4857)**: Every submission with verdict status (accepted, wrong answer, TLE, CE, etc.)
+- **Accepted Only (2181)**: Filtered list of only accepted solutions
 - Problem difficulty ratings
 - Full contest names and divisions
-- Direct links to each solution
+- Direct links to each submission
 - Complete submission metadata
 
 Perfect for:
 
 - Building a competitive programming portfolio
-- Tracking your problem-solving progress
-- Easy reference to past solutions
-- Showcase your skills
+- Tracking your problem-solving progress and learning journey
+- Analyzing your submission patterns and verdict distribution
+- Easy reference to all past attempts
+- Showcase your skills and problem-solving growth
 
 ---
 
