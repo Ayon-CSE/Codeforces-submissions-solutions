@@ -129,6 +129,57 @@ def generate_accepted_markdown(submissions, output_dir, username, contests=None)
     
     print(f"✓ Generated markdown: {output_path}")
 
+def generate_all_submissions_markdown(submissions, output_dir, username, contests=None):
+    """Generate markdown table with ALL submissions including verdicts"""
+    output_path = Path(output_dir) / "codeforces.md"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    if not submissions:
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write(f"# Codeforces - All Submissions ({username})\n\n")
+            f.write(f"No submissions found yet.\n")
+        print(f"✓ Generated all submissions markdown: {output_path}")
+        return
+    
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(f"# Codeforces - All Submissions ({username})\n\n")
+        f.write(f"Total Submissions: **{len(submissions)}**\n\n")
+        f.write("| # | Problem | Rating | Contest | Verdict | Date | Solution |\n")
+        f.write("|---|---------|--------|---------|---------|------|----------|\n")
+        
+        for i, sub in enumerate(submissions, 1):
+            problem = sub.get('problem', {}).get('name', 'N/A')
+            rating = sub.get('problem', {}).get('rating', '?')
+            contest_id = sub.get('contestId', '')
+            verdict = sub.get('verdict', 'N/A')
+            
+            # Color/format verdict
+            if verdict == 'OK':
+                verdict_display = '✅ OK'
+            elif verdict == 'WRONG_ANSWER':
+                verdict_display = '❌ WA'
+            elif verdict == 'TIME_LIMIT_EXCEEDED':
+                verdict_display = '⏱️ TLE'
+            elif verdict == 'COMPILATION_ERROR':
+                verdict_display = '🔴 CE'
+            else:
+                verdict_display = verdict
+            
+            # Get contest name
+            contest_name = 'N/A'
+            if contests and contest_id in contests:
+                contest_name = contests[contest_id].get('name', f'Contest {contest_id}')
+            else:
+                contest_name = f'Contest {contest_id}'
+            
+            time = datetime.fromtimestamp(sub.get('creationTimeSeconds', 0)).strftime('%Y-%m-%d')
+            submission_id = sub.get('id', '')
+            solution_link = f"[View](https://codeforces.com/contest/{contest_id}/submission/{submission_id})"
+            
+            f.write(f"| {i} | {problem} | {rating} | {contest_name} | {verdict_display} | {time} | {solution_link} |\n")
+    
+    print(f"✓ Generated all submissions markdown: {output_path}")
+
 def main():
     print("Fetching Codeforces submissions...\n")
     
@@ -180,6 +231,7 @@ def main():
     
     print("\nGenerating markdown table...")
     generate_accepted_markdown(cf_accepted, base_dir, codeforces_username, contests)
+    generate_all_submissions_markdown(cf_all, base_dir, codeforces_username, contests)
     
     print("\n✓ All submissions fetched and merged!")
     print(f"\n📊 Summary:")
