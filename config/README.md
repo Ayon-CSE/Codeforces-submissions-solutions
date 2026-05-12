@@ -24,6 +24,7 @@ Edit `users.json` to add your Codeforces username:
 ## Workflow
 
 The GitHub Actions workflow runs:
+
 - **Automatically**: Every day at 12:00 AM UTC
 - **Manually**: Go to Actions → Run workflow
 

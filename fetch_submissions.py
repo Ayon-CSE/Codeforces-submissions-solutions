@@ -58,7 +58,7 @@ def fetch_codeforces_contests():
         print(f"✗ Error fetching contests: {e}")
         return {}
 
-def merge_submissions(new_subs, existing_subs, platform):
+def merge_submissions(new_subs, existing_subs):
     """Merge new submissions with existing ones, avoiding duplicates"""
     if not existing_subs:
         return new_subs
@@ -153,7 +153,7 @@ def main():
         cf_subs = fetch_codeforces_submissions(codeforces_username)
         
         # Merge with existing
-        cf_all = merge_submissions(cf_subs, cf_existing, 'codeforces')
+        cf_all = merge_submissions(cf_subs, cf_existing)
         
         print(f"Fetching Codeforces contest details...")
         contests = fetch_codeforces_contests()
@@ -167,7 +167,7 @@ def main():
         contests = {}
     
     # Update state
-    if cf_all:
+    if cf_all and len(cf_all) > 0:
         state['codeforces_max_id'] = max(cf_all, key=lambda x: x['id'])['id']
     
     # Save submissions
