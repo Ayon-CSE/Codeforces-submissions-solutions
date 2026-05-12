@@ -21,8 +21,8 @@
 
 ## 📊 Statistics
 
-| Platform       | Total Submissions | **Accepted (AC)**                          |
-| -------------- | ----------------- | ------------------------------------------ |
+| Platform       | Total Submissions | **Accepted (AC)**                              |
+| -------------- | ----------------- | ---------------------------------------------- |
 | **Codeforces** | 4857              | **[2181](submissions/codeforces_accepted.md)** |
 
 ---
@@ -54,28 +54,29 @@ Each solution includes:
 ## 📝 Configuration
 
 The script is configured in `fetch_submissions.py`:
+
 - Username: `Ayon`
 - API: Codeforces API v2
-- Fetch frequency: Every 6 hours via GitHub Actions
+- Fetch frequency: Daily at 12:00 AM UTC via GitHub Actions
 
 ---
 
 ## 🚀 How It Works
 
-This repository automatically fetches your **accepted solutions only** from Codeforces and AtCoder every day using GitHub Actions and the official APIs.
+This repository automatically fetches your **accepted solutions only** from Codeforces every day using GitHub Actions and the official Codeforces API.
 
 ### Features
 
-- **Automatic Daily Updates**: Runs at 11:00 PM BDT (5:00 PM UTC)
+- **Automatic Daily Updates**: Runs every day at 12:00 AM UTC
 - **Complete Details**: Problem ratings and full contest names
-- **Direct Links**: Click to view any solution on the platform
+- **Direct Links**: Click to view any solution on Codeforces
 - **JSON Backup**: All submission data stored for analysis
 - **Zero Maintenance**: Fully automated via GitHub Actions
 
 ### Workflow
 
 ```
-fetch_submissions.py → Fetch API Data → Filter AC Solutions →
+fetch_submissions.py → Fetch Codeforces API → Filter AC Solutions →
 Generate Markdown with Ratings → Auto-commit → Push to GitHub
 ```
 
@@ -84,35 +85,31 @@ Generate Markdown with Ratings → Auto-commit → Push to GitHub
 ## 📁 Repository Structure
 
 ```
-📦 Codeforces_Atcoder-submissions/
+📦 Codeforces-Submissions/
 ├── 📄 README.md                        # This file
 ├── 📄 fetch_submissions.py             # Main fetch script
 ├── 📂 .github/workflows/
-│   └── 📄 fetch_accepted.yml           # GitHub Actions automation
+│   └── 📄 harwest.yml                  # GitHub Actions automation
 ├── 📂 config/
 │   ├── 📄 users.json                   # Username configuration
 │   └── 📄 README.md                    # Configuration guide
 └── 📂 submissions/
     ├── 📄 codeforces_accepted.md       # All AC solutions with ratings
-    ├── 📄 atcoder_accepted.md          # All AC solutions
-    ├── 📂 codeforces/
-    │   ├── 📄 codeforces_submissions.json
-    │   └── 📄 codeforces_accepted_submissions.json
-    └── 📂 atcoder/
-        ├── 📄 atcoder_submissions.json
-        └── 📄 atcoder_accepted_submissions.json
+    ├── 📄 state.json                   # Fetch state tracking
+    └── 📂 codeforces/
+        ├── 📄 codeforces_submissions.json
+        └── 📄 codeforces_accepted_submissions.json
 ```
 
 ---
 
 ## ⚙️ Configuration
 
-Edit `config/users.json` to change usernames:
+Edit `config/users.json` to change the Codeforces username:
 
 ```json
 {
-  "codeforces": ["Ayon"],
-  "atcoder": ["AyonCoder"]
+  "codeforces": ["Ayon"]
 }
 ```
 
@@ -125,7 +122,7 @@ For more details: [config/README.md](config/README.md)
 Want to fetch accepted solutions immediately?
 
 1. Go to [Actions](../../actions) tab
-2. Select **"Fetch Accepted Solutions"**
+2. Select **"Fetch Codeforces Submissions"**
 3. Click **"Run workflow"**
 
 ---
