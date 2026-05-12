@@ -127,9 +127,6 @@ def generate_accepted_markdown(submissions, platform, output_dir, username, cont
         print(f"✓ Generated empty markdown: {output_path}")
         return
     
-    output_path = Path(output_dir) / f"{platform}_accepted.md"
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(f"# {platform.capitalize()} - Accepted Solutions ({username})\n\n")
         f.write(f"Total Accepted: **{len(submissions)}**\n\n")
