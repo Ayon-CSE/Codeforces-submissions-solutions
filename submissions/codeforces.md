@@ -2,7 +2,7 @@
 
 Total Submissions: **4857**
 
-| # | Problem | Rating | Contest | Verdict | Date | Solution |
+| # | Problem | Rating | Contest | Verdict | Date | Submission |
 |---|---------|--------|---------|---------|------|----------|
 | 1 | Cellular Network | 1500 | Educational Codeforces Round 15 | ✅ OK | 2026-05-12 | [View](https://codeforces.com/contest/702/submission/374267985) |
 | 2 | Cellular Network | 1500 | Educational Codeforces Round 15 | ⏱️ TLE | 2026-05-12 | [View](https://codeforces.com/contest/702/submission/374267872) |

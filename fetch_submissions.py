@@ -144,7 +144,7 @@ def generate_all_submissions_markdown(submissions, output_dir, username, contest
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(f"# Codeforces - All Submissions ({username})\n\n")
         f.write(f"Total Submissions: **{len(submissions)}**\n\n")
-        f.write("| # | Problem | Rating | Contest | Verdict | Date | Solution |\n")
+        f.write("| # | Problem | Rating | Contest | Verdict | Date | Submission |\n")
         f.write("|---|---------|--------|---------|---------|------|----------|\n")
         
         for i, sub in enumerate(submissions, 1):
