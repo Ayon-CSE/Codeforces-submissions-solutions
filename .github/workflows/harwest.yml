@@ -37,11 +37,12 @@ jobs:
       - name: Commit and Push
         run: |
           if [ -n "$(git status --porcelain)" ]; then
-            git add -A
+            git add README.md
+            git add submissions/
+            git add config/
             git commit -m "Update Codeforces submissions on $(date +'%Y-%m-%d %H:%M:%S')"
-            git push origin main
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
+            echo "✅ Successfully pushed updates to GitHub"
           else
-            echo "No new submissions found"
+            echo "⚠️ No new submissions found"
           fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
