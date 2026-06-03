@@ -1,5 +1,76 @@
 [
   {
+    "id": 376991707,
+    "contestId": 1955,
+    "creationTimeSeconds": 1780390957,
+    "relativeTimeSeconds": 2147483647,
+    "problem": {
+      "contestId": 1955,
+      "index": "D",
+      "name": "Inaccurate Subsequence Search",
+      "type": "PROGRAMMING",
+      "rating": 1400,
+      "tags": [
+        "data structures",
+        "two pointers"
+      ]
+    },
+    "author": {
+      "contestId": 1955,
+      "participantId": 179326997,
+      "members": [
+        {
+          "handle": "Ayon"
+        }
+      ],
+      "participantType": "PRACTICE",
+      "ghost": false,
+      "startTimeSeconds": 1712586900
+    },
+    "programmingLanguage": "C++23 (GCC 14-64, msys2)",
+    "verdict": "OK",
+    "testset": "TESTS",
+    "passedTestCount": 15,
+    "timeConsumedMillis": 484,
+    "memoryConsumedBytes": 25804800
+  },
+  {
+    "id": 376963813,
+    "contestId": 1955,
+    "creationTimeSeconds": 1780380045,
+    "relativeTimeSeconds": 2147483647,
+    "problem": {
+      "contestId": 1955,
+      "index": "C",
+      "name": "Inhabitant of the Deep Sea",
+      "type": "PROGRAMMING",
+      "rating": 1300,
+      "tags": [
+        "greedy",
+        "implementation",
+        "math"
+      ]
+    },
+    "author": {
+      "contestId": 1955,
+      "participantId": 179326997,
+      "members": [
+        {
+          "handle": "Ayon"
+        }
+      ],
+      "participantType": "PRACTICE",
+      "ghost": false,
+      "startTimeSeconds": 1712586900
+    },
+    "programmingLanguage": "C++23 (GCC 14-64, msys2)",
+    "verdict": "OK",
+    "testset": "TESTS",
+    "passedTestCount": 30,
+    "timeConsumedMillis": 375,
+    "memoryConsumedBytes": 0
+  },
+  {
     "id": 376868787,
     "contestId": 2232,
     "creationTimeSeconds": 1780307144,
