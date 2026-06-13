@@ -23,7 +23,7 @@
 
 | Platform                                              | Total Submissions                     | **Accepted (AC)**                              |
 | ----------------------------------------------------- | ------------------------------------- | ---------------------------------------------- |
-| **[Codeforces](https://codeforces.com/profile/Ayon)** | **[4977](submissions/codeforces.md)** | **[2250](submissions/codeforces_accepted.md)** |
+| **[Codeforces](https://codeforces.com/profile/Ayon)** | **[4986](submissions/codeforces.md)** | **[2254](submissions/codeforces_accepted.md)** |
 
 ---
 
@@ -31,8 +31,8 @@
 
 ### Codeforces
 
-- **[📋 View All Submissions (4977) →](submissions/codeforces.md)** - **Complete list of ALL submissions** including accepted, wrong answer, TLE, CE, and more
-- **[✅ View Accepted Solutions (2250) →](submissions/codeforces_accepted.md)** - **Only accepted solutions** (OK verdict) with ratings and contest names
+- **[📋 View All Submissions (4986) →](submissions/codeforces.md)** - **Complete list of ALL submissions** including accepted, wrong answer, TLE, CE, and more
+- **[✅ View Accepted Solutions (2254) →](submissions/codeforces_accepted.md)** - **Only accepted solutions** (OK verdict) with ratings and contest names
 - **[👤 View Codeforces Profile →](https://codeforces.com/profile/Ayon)** - Check profile on Codeforces
 
 Each submission includes:
