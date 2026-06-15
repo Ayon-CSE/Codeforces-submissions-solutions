@@ -1,5 +1,81 @@
 [
   {
+    "id": 378750684,
+    "contestId": 372,
+    "creationTimeSeconds": 1781451253,
+    "relativeTimeSeconds": 2147483647,
+    "problem": {
+      "contestId": 372,
+      "index": "A",
+      "name": "Counting Kangaroos is Fun",
+      "type": "PROGRAMMING",
+      "points": 500.0,
+      "rating": 1600,
+      "tags": [
+        "binary search",
+        "greedy",
+        "sortings",
+        "two pointers"
+      ]
+    },
+    "author": {
+      "contestId": 372,
+      "participantId": 201499742,
+      "members": [
+        {
+          "handle": "Ayon"
+        }
+      ],
+      "participantType": "PRACTICE",
+      "ghost": false,
+      "startTimeSeconds": 1386943200
+    },
+    "programmingLanguage": "C++23 (GCC 14-64, msys2)",
+    "verdict": "OK",
+    "testset": "TESTS",
+    "passedTestCount": 45,
+    "timeConsumedMillis": 171,
+    "memoryConsumedBytes": 307200
+  },
+  {
+    "id": 378750605,
+    "contestId": 372,
+    "creationTimeSeconds": 1781451211,
+    "relativeTimeSeconds": 2147483647,
+    "problem": {
+      "contestId": 372,
+      "index": "A",
+      "name": "Counting Kangaroos is Fun",
+      "type": "PROGRAMMING",
+      "points": 500.0,
+      "rating": 1600,
+      "tags": [
+        "binary search",
+        "greedy",
+        "sortings",
+        "two pointers"
+      ]
+    },
+    "author": {
+      "contestId": 372,
+      "participantId": 201499742,
+      "members": [
+        {
+          "handle": "Ayon"
+        }
+      ],
+      "participantType": "PRACTICE",
+      "ghost": false,
+      "startTimeSeconds": 1386943200
+    },
+    "programmingLanguage": "C++23 (GCC 14-64, msys2)",
+    "verdict": "OK",
+    "testset": "TESTS",
+    "passedTestCount": 45,
+    "timeConsumedMillis": 187,
+    "memoryConsumedBytes": 204800
+  },
+  {
     "id": 378541300,
     "contestId": 372,
     "creationTimeSeconds": 1781371137,
