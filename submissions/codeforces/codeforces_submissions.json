@@ -1,5 +1,147 @@
 [
   {
+    "id": 382150040,
+    "contestId": 2242,
+    "creationTimeSeconds": 1783796420,
+    "relativeTimeSeconds": 2147483647,
+    "problem": {
+      "contestId": 2242,
+      "index": "B",
+      "name": "Predominant Frequency Division",
+      "type": "PROGRAMMING",
+      "rating": 1000,
+      "tags": [
+        "data structures",
+        "greedy",
+        "implementation",
+        "math"
+      ]
+    },
+    "author": {
+      "contestId": 2242,
+      "participantId": 240743564,
+      "members": [
+        {
+          "handle": "Ayon"
+        }
+      ],
+      "participantType": "PRACTICE",
+      "ghost": false,
+      "startTimeSeconds": 1783348500
+    },
+    "programmingLanguage": "C++23 (GCC 14-64, msys2)",
+    "verdict": "OK",
+    "testset": "TESTS",
+    "passedTestCount": 9,
+    "timeConsumedMillis": 46,
+    "memoryConsumedBytes": 1024000
+  },
+  {
+    "id": 382101667,
+    "contestId": 2242,
+    "creationTimeSeconds": 1783767178,
+    "relativeTimeSeconds": 2147483647,
+    "problem": {
+      "contestId": 2242,
+      "index": "A",
+      "name": "Bigrams",
+      "type": "PROGRAMMING",
+      "rating": 800,
+      "tags": [
+        "sortings",
+        "strings"
+      ]
+    },
+    "author": {
+      "contestId": 2242,
+      "participantId": 240743564,
+      "members": [
+        {
+          "handle": "Ayon"
+        }
+      ],
+      "participantType": "PRACTICE",
+      "ghost": false,
+      "startTimeSeconds": 1783348500
+    },
+    "programmingLanguage": "C++23 (GCC 14-64, msys2)",
+    "verdict": "OK",
+    "testset": "TESTS",
+    "passedTestCount": 2,
+    "timeConsumedMillis": 15,
+    "memoryConsumedBytes": 0
+  },
+  {
+    "id": 382101558,
+    "contestId": 2242,
+    "creationTimeSeconds": 1783767120,
+    "relativeTimeSeconds": 2147483647,
+    "problem": {
+      "contestId": 2242,
+      "index": "A",
+      "name": "Bigrams",
+      "type": "PROGRAMMING",
+      "rating": 800,
+      "tags": [
+        "sortings",
+        "strings"
+      ]
+    },
+    "author": {
+      "contestId": 2242,
+      "participantId": 240743564,
+      "members": [
+        {
+          "handle": "Ayon"
+        }
+      ],
+      "participantType": "PRACTICE",
+      "ghost": false,
+      "startTimeSeconds": 1783348500
+    },
+    "programmingLanguage": "C++23 (GCC 14-64, msys2)",
+    "verdict": "WRONG_ANSWER",
+    "testset": "TESTS",
+    "passedTestCount": 1,
+    "timeConsumedMillis": 31,
+    "memoryConsumedBytes": 0
+  },
+  {
+    "id": 382101296,
+    "contestId": 2242,
+    "creationTimeSeconds": 1783766968,
+    "relativeTimeSeconds": 2147483647,
+    "problem": {
+      "contestId": 2242,
+      "index": "A",
+      "name": "Bigrams",
+      "type": "PROGRAMMING",
+      "rating": 800,
+      "tags": [
+        "sortings",
+        "strings"
+      ]
+    },
+    "author": {
+      "contestId": 2242,
+      "participantId": 240743564,
+      "members": [
+        {
+          "handle": "Ayon"
+        }
+      ],
+      "participantType": "PRACTICE",
+      "ghost": false,
+      "startTimeSeconds": 1783348500
+    },
+    "programmingLanguage": "C++23 (GCC 14-64, msys2)",
+    "verdict": "WRONG_ANSWER",
+    "testset": "TESTS",
+    "passedTestCount": 1,
+    "timeConsumedMillis": 46,
+    "memoryConsumedBytes": 0
+  },
+  {
     "id": 378750684,
     "contestId": 372,
     "creationTimeSeconds": 1781451253,
